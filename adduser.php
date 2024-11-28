@@ -92,14 +92,14 @@ if(isset($_POST)) {
 
 
 		//sql new registration insert query
-		$sql = "INSERT INTO users(firstname, lastname, email, password, address, city, state, contactno, qualification, stream, passingyear, dob, age, designation, resume, hash, aboutme, skills) VALUES ('$firstname', '$lastname', '$email', '$password', '$address', '$city', '$state', '$contactno', '$qualification', '$stream', '$passingyear', '$dob', '$age', '$designation', '$file', '$hash', '$aboutme', '$skills')";
+		$sql = "INSERT INTO users(firstname, lastname, email, password, address, city, state, contactno, qualification, stream, passingyear, dob, age, designation, resume, hash, aboutme, skills, active) VALUES ('$firstname', '$lastname', '$email', '$password', '$address', '$city', '$state', '$contactno', '$qualification', '$stream', '$passingyear', '$dob', '$age', '$designation', '$file', '$hash', '$aboutme', '$skills', 1)";
 
 		if($conn->query($sql)===TRUE) {
 			// Send Email
 
 			// $to = $email;
 
-			// $subject = "Job Portal - Confirm Your Email Address";
+			// $subject = "Online Nurse Hiring System - Confirm Your Email Address";
 
 			// $message = '
 			

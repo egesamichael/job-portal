@@ -12,7 +12,7 @@ require_once("db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Online Nurse Hiring System</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -50,17 +50,37 @@ require_once("db.php");
       <span class="logo-lg"><b>Job</b> Portal</span>
     </a>
 
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
+     <!-- Header Navbar: style can be found in header.less -->
+     <nav class="navbar navbar-static-top">
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+        
+          <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
           <li>
             <a href="login.php">Login</a>
           </li>
           <li>
             <a href="sign-up.php">Sign Up</a>
-          </li>          
+          </li>  
+          <?php } else { 
+
+            if(isset($_SESSION['id_user'])) { 
+          ?>        
+          <li>
+            <a href="user/index.php">Dashboard</a>
+          </li>
+          <?php
+          } else if(isset($_SESSION['id_company'])) { 
+          ?>        
+          <li>
+            <a href="company/index.php">Dashboard</a>
+          </li>
+          <?php } ?>
+          <li>
+            <a href="logout.php">Logout</a>
+          </li>
+          <?php } ?>
         </ul>
       </div>
     </nav>
@@ -99,7 +119,10 @@ require_once("db.php");
               <?php echo stripcslashes($row['description']); ?>
             </div>
             <?php 
-            if(isset($_SESSION["id_user"]) && empty($_SESSION['companyLogged'])) { ?>
+            if(isset($_SESSION["id_user"]) && empty($_SESSION['companyLogged'])) { 
+              
+              echo "user session found";
+              ?>
             <div>
               <a href="apply.php?id=<?php echo $row['id_jobpost']; ?>" class="btn btn-success btn-flat margin-top-50">Apply</a>
             </div>
@@ -109,7 +132,7 @@ require_once("db.php");
           </div>
           <div class="col-md-3">
             <div class="thumbnail">
-              <img src="uploads/logo/<?php echo $row['logo']; ?>" alt="companylogo">
+              <!-- <img src="uploads/logo/<?php echo $row['logo']; ?>" alt="companylogo"> -->
               <div class="caption text-center">
                 <h3><?php echo $row['companyname']; ?></h3>
                 <p><a href="#" class="btn btn-primary btn-flat" role="button">More Info</a>
@@ -138,7 +161,7 @@ require_once("db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="learningfromscratch.online">Job Portal</a>.</strong> All rights
+      <strong>Ainembabazi Judith 2024 <a href="learningfromscratch.online">Online Nurse Hiring System</a>.</strong> All rights
     reserved.
     </div>
   </footer>

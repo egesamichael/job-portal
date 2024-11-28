@@ -12,7 +12,7 @@ require_once("db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Online Nurse Hiring System</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -107,7 +107,7 @@ require_once("db.php");
     <section id="candidates" class="content-header">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <!-- <div class="col-md-3">
             <div class="box box-solid">
               <div class="box-header with-border">
                 <h3 class="box-title">Filters</h3>
@@ -134,7 +134,7 @@ require_once("db.php");
                 </ul>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="col-md-9">
 
           <?php
@@ -176,7 +176,7 @@ require_once("db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="learningfromscratch.online">Job Portal</a>.</strong> All rights
+      <strong>Ainembabazi Judith 2024 <a href="learningfromscratch.online">Online Nurse Hiring System</a>.</strong> All rights
     reserved.
     </div>
   </footer>
